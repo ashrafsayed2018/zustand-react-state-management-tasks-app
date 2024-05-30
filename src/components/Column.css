@@ -1,0 +1,72 @@
+.column {
+  width: 33%;
+  max-width: 20rem;
+  background-color: var(--COLOR-GRAY-DARK);
+  min-height: 20rem;
+  color: #fff;
+  margin: 0 0.5rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-wrapper button {
+  all: unset;
+  height: fit-content;
+  cursor: pointer;
+  color: var(--COLOR-GRAY);
+  background: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.title-wrapper button:hover {
+  background-color: var(--COLOR-GRAY-LIGHT);
+  color: white;
+}
+
+.modal {
+  position: absolute;
+  background: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  width: 400px;
+  height: 400px;
+  right: calc(50% - 200px);
+  top: calc(50% - 200px);
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal input {
+  all: unset;
+  background-color: white;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--COLOR-GRAY-LIGHT);
+  font-size: 1.25rem;
+  color: black;
+}
+
+.modal button {
+  all: unset;
+  background-color: var(--COLOR-DONE);
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--COLOR-GRAY-LIGHT);
+  font-size: 1.25rem;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+.modal button:hover {
+  background-color: var(--COLOR-GRAY-LIGHT);
+}

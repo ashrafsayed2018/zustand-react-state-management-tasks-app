@@ -1,0 +1,35 @@
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+  color: #000000;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.task .status-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.task .status-container .status {
+  font-size: small;
+  background-color: var(--COLOR-GRAY-LIGHT);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.task .status-container .status.PLANNED {
+  background-color: var(--COLOR-GRAY-LIGHT);
+}
+.task .status-container .status.ONGOING {
+  background-color: var(--COLOR-ORANGE);
+}
+.task .status-container .status.DONE {
+  background-color: var(--COLOR-DONE);
+}
