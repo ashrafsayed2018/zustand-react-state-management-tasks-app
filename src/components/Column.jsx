@@ -6,17 +6,41 @@ import './Column.css'
 import Task from './Task'
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import classNames from 'classnames/bind'
 
 function Column({ state }) {
   const randomId = uuidv4()
   const [text, setText] = useState('')
   const [open, setOpen] = useState(false)
+  const [drop, setDrop] = useState(false)
   const tasks = tasksStore((store) =>
     store.tasks.filter((task) => task.state === state, shallow)
   )
   const addTask = tasksStore((store) => store.addTask)
+  const setDraggedTask = tasksStore((store) => store.setDraggedTask)
+  const draggedTask = tasksStore((store) => store.draggedTask)
+  const moveTask = tasksStore((store) => store.moveTask)
+
   return (
-    <div className="column">
+    <div
+      className={classNames('column', { drop: drop })}
+      key={state}
+      onDragOver={(e) => {
+        e.preventDefault()
+        setDrop(true)
+      }}
+      onDragLeave={(e) => {
+        {
+          e.preventDefault()
+          setDrop(false)
+        }
+      }}
+      onDrop={() => {
+        moveTask(draggedTask, state)
+        setDraggedTask(null)
+        setDrop(false)
+      }}
+    >
       <div className="title-wrapper">
         <p>{state}</p>
         <button onClick={() => setOpen(!open)}>Add</button>

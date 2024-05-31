@@ -8,6 +8,9 @@
   border-radius: 0.25rem;
   padding: 0.5rem;
 }
+.column.drop {
+  outline: 4px dashed white;
+}
 .title-wrapper {
   display: flex;
   justify-content: space-between;

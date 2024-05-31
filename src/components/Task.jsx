@@ -6,8 +6,15 @@ import { tasksStore } from '../store'
 function Task({ title, state }) {
   const task = tasksStore((store) => store.tasks.find((t) => t.title === title))
   const deleteTask = tasksStore((store) => store.removeTask)
+  const setDraggedTask = tasksStore((store) => store.setDraggedTask)
   return (
-    <div className="task">
+    <div
+      className="task"
+      draggable
+      onDragStart={() => {
+        setDraggedTask(title)
+      }}
+    >
       <div>{title}</div>
       <div className="status-container">
         <div>
