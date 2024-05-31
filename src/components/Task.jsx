@@ -15,7 +15,7 @@ function Task({ title, state }) {
         setDraggedTask(title)
       }}
     >
-      <div>{title}</div>
+      <div className="task-title">{title}</div>
       <div className="status-container">
         <div>
           {/* trash icon image */}
